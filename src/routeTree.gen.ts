@@ -14,6 +14,7 @@ import { Route as ObjetivosRouteImport } from './routes/objetivos'
 import { Route as MercadoRouteImport } from './routes/mercado'
 import { Route as MarcasRouteImport } from './routes/marcas'
 import { Route as ConsumidorRouteImport } from './routes/consumidor'
+import { Route as CanaisRouteImport } from './routes/canais'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TemaRoute = TemaRouteImport.update({
@@ -41,6 +42,11 @@ const ConsumidorRoute = ConsumidorRouteImport.update({
   path: '/consumidor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CanaisRoute = CanaisRouteImport.update({
+  id: '/canais',
+  path: '/canais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
   '/consumidor': typeof ConsumidorRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
   '/consumidor': typeof ConsumidorRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
   '/consumidor': typeof ConsumidorRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
@@ -76,16 +85,25 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/canais'
     | '/consumidor'
     | '/marcas'
     | '/mercado'
     | '/objetivos'
     | '/tema'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/consumidor' | '/marcas' | '/mercado' | '/objetivos' | '/tema'
+  to:
+    | '/'
+    | '/canais'
+    | '/consumidor'
+    | '/marcas'
+    | '/mercado'
+    | '/objetivos'
+    | '/tema'
   id:
     | '__root__'
     | '/'
+    | '/canais'
     | '/consumidor'
     | '/marcas'
     | '/mercado'
@@ -95,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CanaisRoute: typeof CanaisRoute
   ConsumidorRoute: typeof ConsumidorRoute
   MarcasRoute: typeof MarcasRoute
   MercadoRoute: typeof MercadoRoute
@@ -139,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConsumidorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/canais': {
+      id: '/canais'
+      path: '/canais'
+      fullPath: '/canais'
+      preLoaderRoute: typeof CanaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -151,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CanaisRoute: CanaisRoute,
   ConsumidorRoute: ConsumidorRoute,
   MarcasRoute: MarcasRoute,
   MercadoRoute: MercadoRoute,
