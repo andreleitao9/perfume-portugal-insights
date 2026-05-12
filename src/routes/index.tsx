@@ -31,7 +31,7 @@ function Index() {
             <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 text-sm">
               <Field label="Disciplina" value="Tecnologias de Informação" />
               <Field label="Ano letivo" value="2025/2026" />
-              <Field label="Escola" value="[Nome da Escola]" />
+              <Field label="Escola" value="IPAM" />
               <Field label="Grupo" value="[Nome do Grupo]" />
             </dl>
 
@@ -43,6 +43,10 @@ function Index() {
                 <li className="flex justify-between gap-4"><span>[Nome completo do aluno 1]</span><span className="text-muted-foreground">nº [00]</span></li>
                 <li className="flex justify-between gap-4"><span>[Nome completo do aluno 2]</span><span className="text-muted-foreground">nº [00]</span></li>
                 <li className="flex justify-between gap-4"><span>[Nome completo do aluno 3]</span><span className="text-muted-foreground">nº [00]</span></li>
+                <li className="flex justify-between gap-4"><span>[Nome completo do aluno 3]</span><span className="text-muted-foreground">nº [00]</span></li>
+                <li className="flex justify-between gap-4"><span>[Nome completo do aluno 3]</span><span className="text-muted-foreground">nº [00]</span></li>
+                <li className="flex justify-between gap-4"><span>[Nome completo do aluno 3]</span><span className="text-muted-foreground">nº [00]</span></li>
+
               </ul>
             </div>
 

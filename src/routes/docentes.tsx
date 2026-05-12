@@ -24,6 +24,22 @@ function DocentesPage() {
         <Teacher name="[Nome do/a Professor/a]" subject="Tecnologias de Informação" />
         {/* Adicionar mais docentes se aplicável */}
       </div>
+      <div className="mt-14 mx-auto max-w-2xl space-y-4">
+        <Teacher name="[Nome do/a Professor/a]" subject="Tecnologias de Informação" />
+        {/* Adicionar mais docentes se aplicável */}
+      </div>
+      <div className="mt-14 mx-auto max-w-2xl space-y-4">
+        <Teacher name="[Nome do/a Professor/a]" subject="Tecnologias de Informação" />
+        {/* Adicionar mais docentes se aplicável */}
+      </div>
+      <div className="mt-14 mx-auto max-w-2xl space-y-4">
+        <Teacher name="[Nome do/a Professor/a]" subject="Tecnologias de Informação" />
+        {/* Adicionar mais docentes se aplicável */}
+      </div>
+      <div className="mt-14 mx-auto max-w-2xl space-y-4">
+        <Teacher name="[Nome do/a Professor/a]" subject="Tecnologias de Informação" />
+        {/* Adicionar mais docentes se aplicável */}
+      </div>
 
       <p className="mt-12 text-center text-sm text-muted-foreground">
         Trabalho realizado no ano letivo 2025/2026.
