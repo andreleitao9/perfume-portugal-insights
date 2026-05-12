@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TemaRouteImport } from './routes/tema'
 import { Route as ObjetivosRouteImport } from './routes/objetivos'
 import { Route as MercadoRouteImport } from './routes/mercado'
+import { Route as MarcasRouteImport } from './routes/marcas'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TemaRoute = TemaRouteImport.update({
@@ -29,6 +30,11 @@ const MercadoRoute = MercadoRouteImport.update({
   path: '/mercado',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarcasRoute = MarcasRouteImport.update({
+  id: '/marcas',
+  path: '/marcas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/mercado' | '/objetivos' | '/tema'
+  fullPaths: '/' | '/marcas' | '/mercado' | '/objetivos' | '/tema'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/mercado' | '/objetivos' | '/tema'
-  id: '__root__' | '/' | '/mercado' | '/objetivos' | '/tema'
+  to: '/' | '/marcas' | '/mercado' | '/objetivos' | '/tema'
+  id: '__root__' | '/' | '/marcas' | '/mercado' | '/objetivos' | '/tema'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MarcasRoute: typeof MarcasRoute
   MercadoRoute: typeof MercadoRoute
   ObjetivosRoute: typeof ObjetivosRoute
   TemaRoute: typeof TemaRoute
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MercadoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/marcas': {
+      id: '/marcas'
+      path: '/marcas'
+      fullPath: '/marcas'
+      preLoaderRoute: typeof MarcasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MarcasRoute: MarcasRoute,
   MercadoRoute: MercadoRoute,
   ObjetivosRoute: ObjetivosRoute,
   TemaRoute: TemaRoute,
