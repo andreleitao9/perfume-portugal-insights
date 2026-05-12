@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TendenciasRouteImport } from './routes/tendencias'
+import { Route as TemaRouteImport } from './routes/tema'
+import { Route as ObjetivosRouteImport } from './routes/objetivos'
+import { Route as MercadoRouteImport } from './routes/mercado'
+import { Route as MarcasRouteImport } from './routes/marcas'
+import { Route as DocentesRouteImport } from './routes/docentes'
+import { Route as ConsumidorRouteImport } from './routes/consumidor'
+import { Route as ConclusaoRouteImport } from './routes/conclusao'
+import { Route as CanaisRouteImport } from './routes/canais'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TendenciasRoute = TendenciasRouteImport.update({
+  id: '/tendencias',
+  path: '/tendencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemaRoute = TemaRouteImport.update({
+  id: '/tema',
+  path: '/tema',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObjetivosRoute = ObjetivosRouteImport.update({
+  id: '/objetivos',
+  path: '/objetivos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MercadoRoute = MercadoRouteImport.update({
+  id: '/mercado',
+  path: '/mercado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarcasRoute = MarcasRouteImport.update({
+  id: '/marcas',
+  path: '/marcas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocentesRoute = DocentesRouteImport.update({
+  id: '/docentes',
+  path: '/docentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsumidorRoute = ConsumidorRouteImport.update({
+  id: '/consumidor',
+  path: '/consumidor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConclusaoRoute = ConclusaoRouteImport.update({
+  id: '/conclusao',
+  path: '/conclusao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CanaisRoute = CanaisRouteImport.update({
+  id: '/canais',
+  path: '/canais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
+  '/marcas': typeof MarcasRoute
+  '/mercado': typeof MercadoRoute
+  '/objetivos': typeof ObjetivosRoute
+  '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
+  '/marcas': typeof MarcasRoute
+  '/mercado': typeof MercadoRoute
+  '/objetivos': typeof ObjetivosRoute
+  '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/canais': typeof CanaisRoute
+  '/conclusao': typeof ConclusaoRoute
+  '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
+  '/marcas': typeof MarcasRoute
+  '/mercado': typeof MercadoRoute
+  '/objetivos': typeof ObjetivosRoute
+  '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/canais'
+    | '/conclusao'
+    | '/consumidor'
+    | '/docentes'
+    | '/marcas'
+    | '/mercado'
+    | '/objetivos'
+    | '/tema'
+    | '/tendencias'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/canais'
+    | '/conclusao'
+    | '/consumidor'
+    | '/docentes'
+    | '/marcas'
+    | '/mercado'
+    | '/objetivos'
+    | '/tema'
+    | '/tendencias'
+  id:
+    | '__root__'
+    | '/'
+    | '/canais'
+    | '/conclusao'
+    | '/consumidor'
+    | '/docentes'
+    | '/marcas'
+    | '/mercado'
+    | '/objetivos'
+    | '/tema'
+    | '/tendencias'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CanaisRoute: typeof CanaisRoute
+  ConclusaoRoute: typeof ConclusaoRoute
+  ConsumidorRoute: typeof ConsumidorRoute
+  DocentesRoute: typeof DocentesRoute
+  MarcasRoute: typeof MarcasRoute
+  MercadoRoute: typeof MercadoRoute
+  ObjetivosRoute: typeof ObjetivosRoute
+  TemaRoute: typeof TemaRoute
+  TendenciasRoute: typeof TendenciasRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tendencias': {
+      id: '/tendencias'
+      path: '/tendencias'
+      fullPath: '/tendencias'
+      preLoaderRoute: typeof TendenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tema': {
+      id: '/tema'
+      path: '/tema'
+      fullPath: '/tema'
+      preLoaderRoute: typeof TemaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/objetivos': {
+      id: '/objetivos'
+      path: '/objetivos'
+      fullPath: '/objetivos'
+      preLoaderRoute: typeof ObjetivosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mercado': {
+      id: '/mercado'
+      path: '/mercado'
+      fullPath: '/mercado'
+      preLoaderRoute: typeof MercadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marcas': {
+      id: '/marcas'
+      path: '/marcas'
+      fullPath: '/marcas'
+      preLoaderRoute: typeof MarcasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docentes': {
+      id: '/docentes'
+      path: '/docentes'
+      fullPath: '/docentes'
+      preLoaderRoute: typeof DocentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consumidor': {
+      id: '/consumidor'
+      path: '/consumidor'
+      fullPath: '/consumidor'
+      preLoaderRoute: typeof ConsumidorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conclusao': {
+      id: '/conclusao'
+      path: '/conclusao'
+      fullPath: '/conclusao'
+      preLoaderRoute: typeof ConclusaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/canais': {
+      id: '/canais'
+      path: '/canais'
+      fullPath: '/canais'
+      preLoaderRoute: typeof CanaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +237,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CanaisRoute: CanaisRoute,
+  ConclusaoRoute: ConclusaoRoute,
+  ConsumidorRoute: ConsumidorRoute,
+  DocentesRoute: DocentesRoute,
+  MarcasRoute: MarcasRoute,
+  MercadoRoute: MercadoRoute,
+  ObjetivosRoute: ObjetivosRoute,
+  TemaRoute: TemaRoute,
+  TendenciasRoute: TendenciasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
