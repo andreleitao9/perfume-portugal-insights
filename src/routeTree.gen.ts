@@ -14,6 +14,7 @@ import { Route as TemaRouteImport } from './routes/tema'
 import { Route as ObjetivosRouteImport } from './routes/objetivos'
 import { Route as MercadoRouteImport } from './routes/mercado'
 import { Route as MarcasRouteImport } from './routes/marcas'
+import { Route as DocentesRouteImport } from './routes/docentes'
 import { Route as ConsumidorRouteImport } from './routes/consumidor'
 import { Route as ConclusaoRouteImport } from './routes/conclusao'
 import { Route as CanaisRouteImport } from './routes/canais'
@@ -44,6 +45,11 @@ const MarcasRoute = MarcasRouteImport.update({
   path: '/marcas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocentesRoute = DocentesRouteImport.update({
+  id: '/docentes',
+  path: '/docentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConsumidorRoute = ConsumidorRouteImport.update({
   id: '/consumidor',
   path: '/consumidor',
@@ -70,6 +76,7 @@ export interface FileRoutesByFullPath {
   '/canais': typeof CanaisRoute
   '/conclusao': typeof ConclusaoRoute
   '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/canais': typeof CanaisRoute
   '/conclusao': typeof ConclusaoRoute
   '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/canais': typeof CanaisRoute
   '/conclusao': typeof ConclusaoRoute
   '/consumidor': typeof ConsumidorRoute
+  '/docentes': typeof DocentesRoute
   '/marcas': typeof MarcasRoute
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | '/canais'
     | '/conclusao'
     | '/consumidor'
+    | '/docentes'
     | '/marcas'
     | '/mercado'
     | '/objetivos'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | '/canais'
     | '/conclusao'
     | '/consumidor'
+    | '/docentes'
     | '/marcas'
     | '/mercado'
     | '/objetivos'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '/canais'
     | '/conclusao'
     | '/consumidor'
+    | '/docentes'
     | '/marcas'
     | '/mercado'
     | '/objetivos'
@@ -140,6 +152,7 @@ export interface RootRouteChildren {
   CanaisRoute: typeof CanaisRoute
   ConclusaoRoute: typeof ConclusaoRoute
   ConsumidorRoute: typeof ConsumidorRoute
+  DocentesRoute: typeof DocentesRoute
   MarcasRoute: typeof MarcasRoute
   MercadoRoute: typeof MercadoRoute
   ObjetivosRoute: typeof ObjetivosRoute
@@ -184,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarcasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docentes': {
+      id: '/docentes'
+      path: '/docentes'
+      fullPath: '/docentes'
+      preLoaderRoute: typeof DocentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/consumidor': {
       id: '/consumidor'
       path: '/consumidor'
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   CanaisRoute: CanaisRoute,
   ConclusaoRoute: ConclusaoRoute,
   ConsumidorRoute: ConsumidorRoute,
+  DocentesRoute: DocentesRoute,
   MarcasRoute: MarcasRoute,
   MercadoRoute: MercadoRoute,
   ObjetivosRoute: ObjetivosRoute,
