@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TendenciasRouteImport } from './routes/tendencias'
 import { Route as TemaRouteImport } from './routes/tema'
 import { Route as ObjetivosRouteImport } from './routes/objetivos'
 import { Route as MercadoRouteImport } from './routes/mercado'
@@ -17,6 +18,11 @@ import { Route as ConsumidorRouteImport } from './routes/consumidor'
 import { Route as CanaisRouteImport } from './routes/canais'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TendenciasRoute = TendenciasRouteImport.update({
+  id: '/tendencias',
+  path: '/tendencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TemaRoute = TemaRouteImport.update({
   id: '/tema',
   path: '/tema',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/mercado': typeof MercadoRoute
   '/objetivos': typeof ObjetivosRoute
   '/tema': typeof TemaRoute
+  '/tendencias': typeof TendenciasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/mercado'
     | '/objetivos'
     | '/tema'
+    | '/tendencias'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/mercado'
     | '/objetivos'
     | '/tema'
+    | '/tendencias'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/mercado'
     | '/objetivos'
     | '/tema'
+    | '/tendencias'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,10 +131,18 @@ export interface RootRouteChildren {
   MercadoRoute: typeof MercadoRoute
   ObjetivosRoute: typeof ObjetivosRoute
   TemaRoute: typeof TemaRoute
+  TendenciasRoute: typeof TendenciasRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tendencias': {
+      id: '/tendencias'
+      path: '/tendencias'
+      fullPath: '/tendencias'
+      preLoaderRoute: typeof TendenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tema': {
       id: '/tema'
       path: '/tema'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   MercadoRoute: MercadoRoute,
   ObjetivosRoute: ObjetivosRoute,
   TemaRoute: TemaRoute,
+  TendenciasRoute: TendenciasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
