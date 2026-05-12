@@ -2,12 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, PageShell } from "@/components/PageHeader";
 
 export const Route = createFileRoute("/marcas")({
-  head: () => ({
-    meta: [
-      { title: "Marcas Mais Populares — Perfumes em Portugal" },
-      { name: "description", content: "As marcas de perfumes mais conhecidas em Portugal, internacionais e acessíveis." },
-    ],
-  }),
   component: MarcasPage,
 });
 

@@ -2,12 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, PageShell } from "@/components/PageHeader";
 
 export const Route = createFileRoute("/tendencias")({
-  head: () => ({
-    meta: [
-      { title: "Tendências do Mercado — Perfumes em Portugal" },
-      { name: "description", content: "Tendências atuais do mercado de perfumes: sustentabilidade, vegan, online e personalização." },
-    ],
-  }),
   component: TendenciasPage,
 });
 

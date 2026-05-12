@@ -3,12 +3,6 @@ import { PageHeader, PageShell } from "@/components/PageHeader";
 import bottleImg from "@/assets/perfume-bottle.jpg";
 
 export const Route = createFileRoute("/mercado")({
-  head: () => ({
-    meta: [
-      { title: "Mercado de Perfumes em Portugal — Caracterização" },
-      { name: "description", content: "Caracterização do mercado de perfumes em Portugal: importância, crescimento e segmentação." },
-    ],
-  }),
   component: MercadoPage,
 });
 

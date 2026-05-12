@@ -2,12 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-perfumes.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Página de Rosto — Mercado de Perfumes em Portugal" },
-      { name: "description", content: "Página de rosto do trabalho escolar sobre o Mercado de Perfumes em Portugal." },
-    ],
-  }),
   component: Index,
 });
 

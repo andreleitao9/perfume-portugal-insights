@@ -3,12 +3,6 @@ import { PageHeader, PageShell } from "@/components/PageHeader";
 import storeImg from "@/assets/perfumery-store.jpg";
 
 export const Route = createFileRoute("/canais")({
-  head: () => ({
-    meta: [
-      { title: "Canais de Venda — Perfumes em Portugal" },
-      { name: "description", content: "Principais canais de venda de perfumes em Portugal: lojas físicas, online e perfumarias especializadas." },
-    ],
-  }),
   component: CanaisPage,
 });
 

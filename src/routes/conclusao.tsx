@@ -2,12 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, PageShell } from "@/components/PageHeader";
 
 export const Route = createFileRoute("/conclusao")({
-  head: () => ({
-    meta: [
-      { title: "Conclusão — Mercado de Perfumes em Portugal" },
-      { name: "description", content: "Conclusões finais do trabalho sobre o mercado de perfumes em Portugal." },
-    ],
-  }),
   component: ConclusaoPage,
 });
 
